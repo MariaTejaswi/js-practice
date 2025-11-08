@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM learning</title>
+    <style>
+            .bg-black{
+                background-color: #212121;
+                color: #fff;
+            }       
+        
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM learning on Chai aur code <span style="display: none">test text</span></h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</body>
+</html>
+
+<!-- HTMLCollections, DomCollections, Arrays are different -->
+
+<!-- document.getElementById('title').getAttribute('id') --- 'title'
+document.getElementById('title').getAttribute('class') --- 'heading'
+document.getElementById('title').setAttribute('class', 'test') --- undefined [but it will always overwrite and class='heading' will be changed to 'test']
+document.getElementById('title').setAttribute('class', 'test heading') --- undefined [but it will always overwrite and class='heading' will be changed to 'test heading'] -->
+
+
+<!-- const title = document.getElementById('title')
+ title.style.backgroundColor = 'green'
+ title.style.padding = "15px"
+ title.style.borderRadius = "5px"
+title.textContent -> it shows the hidden content also
+title.innerText -> it does not show the hidden content and can make the changes in the text that is visible, otherwise both work the same ways
+title.innerHTML -> it shows the complete html title code so that the hidden code is also shown -->
+
+<!-- innerHTML supports html tags but textContent and innerText does not support those -->
