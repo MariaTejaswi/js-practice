@@ -14,7 +14,20 @@
 <body class="bg-black">
     <div>
         <h1 id="title" class="heading">DOM learning on Chai aur code <span style="display: none">test text</span></h1>
+        
+        <h2>Lorem, ipsum dolor.</h2>
+        <h2>Lorem, ipsum dolor.</h2>
+        <h2>Lorem, ipsum dolor.</h2>
         <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+
     </div>
 </body>
 </html>
@@ -36,3 +49,61 @@ title.innerText -> it does not show the hidden content and can make the changes 
 title.innerHTML -> it shows the complete html title code so that the hidden code is also shown -->
 
 <!-- innerHTML supports html tags but textContent and innerText does not support those -->
+
+<!-- Query Selector
+document.getElementByClassName('heading')
+document.querySelector('h2') -> it will show h2 tag with content
+document.querySelector('#title') -> it will show h1 tag with id and class inside it
+document.querySelector('.heading') -> it will show h1 tag with id and class inside it
+document.querySelector('input[type="password"]') -> input tag will be selected
+document.querySelector('p:first-child') -> like this also u can select
+
+document.querySelector('ul')
+const myul = document.querySelector('ul')
+myul.querySelector('li')
+const turnGreen = myul.querySelector('li')
+turnGreen.style.backgroundColor = "green"
+turnGreen.style.padding = "10px"
+turnGreen.innerText -> 'one'
+turnGreen.innerText = "five" -> now that "one" will turn into "five" -->
+
+
+
+<!-- Query Selector All
+document.querySelectorAll('li') -> NodeList(3) [li,li,li]
+const tempLiList = document.querySelectorAll('li')
+tempLiList.style.color = 'green' -> error bcoz it is not an array 
+tempLiList[0].style.color = 'green' -> 'one' will be changed to green font color 
+const myH1 = document.querySelectorAll('h1')
+myH1 -> it is NodeList only
+myH1.style.color = 'green' -> error
+myH1[0].style.color = 'green' -> it will change to green
+
+using forEach: 
+tempLiList.forEach(function (l){
+    l.style.backgroundColor = 'green'
+})  -> for this the bg color of one two three list will become green -->
+
+
+
+<!-- document.getElementsByClassName('list-item') -> now we will get HTMLCollections(4)
+const tempClassList = document.getElementsByClassName('list-item')
+tempClassList.forEach(function(li){
+    console.log(li)
+}) -> typeError bcoz in this forEach is not present
+
+to convert into array
+Array.from(tempClassList) -> it will be converted into array
+
+const myConvertedArray = Array.from(tempClassList) 
+myConvertedArray.forEach(function(li){
+    li.style.color = 'orange'
+}) -> it will work all 4 li tag texts will become orange -->
+
+
+ 
+
+
+
+
+
